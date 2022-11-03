@@ -1,0 +1,29 @@
+create database customer;
+use customer;
+create table CustomerT(c_id int PRIMARY KEY ,c_name varchar(14),c_phno int,c_billamount int);
+insert into CustomerT Values(111,"ramu",1234567,6000);
+insert into CustomerT Values(112,"ravi",1234567,300);
+insert into CustomerT Values(113,"raju",1234567,16000);
+insert into CustomerT Values(114,"rajiv",1234567,19000);
+insert into CustomerT Values(115,"ramesh",1234567,5400);
+select c_name,c_billamount from CustomerT where c_billamount>=6000;
+
+
+create table product(pname varchar(24),pprice int,pcode int PRIMARY KEY);
+insert into product values("wheatfloor",500,020);
+insert into product values("lipstick",999,222);
+insert into product values("bodycream",767,666);
+insert into product values("lipbalam",5000,676);
+insert into product values("sunscreen",1500,110);
+select sum(pprice) from product where pprice>100;
+select avg(pprice) from product where pprice>100;
+select min(pprice) from product where pprice>100;
+select max(pprice) from product where pprice>100;
+
+create table orders(oname varchar(33),oitems int);
+insert into orders values("makeupitems",6);
+insert into orders values("grocreyitems",3);
+insert into orders values("fooditems",8);
+insert into orders values("medicines",9);
+insert into orders values("hairproducts",11);
+select * from orders order by oitems;
